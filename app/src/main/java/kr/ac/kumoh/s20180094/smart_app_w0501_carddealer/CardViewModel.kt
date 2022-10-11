@@ -11,7 +11,7 @@ class CardViewModel : ViewModel(){
         get() = _cards
 
     //val random = Random(System.currentTimeMillis())
-    val random = Random(100)
+    val random = Random(System.currentTimeMillis())
     fun deal(){
         var c = IntArray(5)
         for(i in c.indices){
