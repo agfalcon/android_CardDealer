@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import kr.ac.kumoh.s20180094.smart_app_w0501_carddealer.databinding.ActivityMainBinding
+import kotlin.random.Random
+import kotlin.random.Random.Default.nextInt
 
 
 class MainActivity : AppCompatActivity() {
@@ -16,8 +18,24 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        getCardName(29)
-        binding.card1.setImageResource(R.drawable.c_3_of_diamonds)
+        //binding.card1.setImageResource(R.drawable.c_3_of_diamonds)
+
+        binding.btnCard.setOnClickListener {
+            val res = IntArray(5)
+            for(i in 0 until res.size){
+                res[i] = resources.getIdentifier(
+                    getCardName(Random.nextInt(52)),
+                    "drawable",
+                    packageName
+                )
+            }
+            binding.card1.setImageResource(res[0])
+            binding.card2.setImageResource(res[1])
+            binding.card3.setImageResource(res[2])
+            binding.card4.setImageResource(res[3])
+            binding.card5.setImageResource(res[4])
+        }
+
     }
 
     private fun getCardName(c: Int): String{
@@ -36,7 +54,9 @@ class MainActivity : AppCompatActivity() {
             12 -> "king"
             else -> "error"
         }
-
-        return "c_${number}_of_${shape}"
+        if(number=="jack" || number=="queen" || number =="king")
+            return "c_${number}_of_${shape}2"
+        else
+            return "c_${number}_of_${shape}"
     }
 }

@@ -11,9 +11,51 @@
         android:layout_width="100dp"
         android:layout_height="0dp"
         android:id="@+id/card1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/card3"
+        app:layout_constraintEnd_toStartOf="@id/card2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:id="@+id/card2"
+        app:layout_constraintBottom_toTopOf="@id/card4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/card1"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:id="@+id/card3"
+        app:layout_constraintBottom_toTopOf="@id/card5"
+        app:layout_constraintEnd_toStartOf="@id/card4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card1"/>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:id="@+id/card4"
+        app:layout_constraintBottom_toTopOf="@id/card5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/card3"
+        app:layout_constraintTop_toBottomOf="@id/card2" />
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:id="@+id/card5"
+        app:layout_constraintBottom_toTopOf="@id/btn_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card3" />
+
+    <Button
+        android:id="@+id/btn_card"
+        android:text="SHUFFLE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
